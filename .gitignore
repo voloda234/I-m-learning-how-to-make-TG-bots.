@@ -1,0 +1,15 @@
+# Виртуальное окружение
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Переменные окружения
+.env
+
+# Локальный конфиг
+config.py
+
+# VS Code
+.vscode/
