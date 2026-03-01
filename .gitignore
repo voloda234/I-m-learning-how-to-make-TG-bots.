@@ -13,3 +13,6 @@ config.py
 
 # VS Code
 .vscode/
+
+# data base
+db.sqlite3
