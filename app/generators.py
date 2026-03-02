@@ -13,4 +13,5 @@ async def gpt_text(req, model):
         input=req,
         model=model
     )
-    return completion.output_text
+    return {'response':completion.output_text,
+            'usege': completion.usage.total_tokens}

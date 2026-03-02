@@ -35,6 +35,7 @@ class AIModel(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name:  Mapped[str] = mapped_column(String(25))
     ai_type:  Mapped[int] = mapped_column(ForeignKey('ai_types.id'))
+    price:  Mapped[str] = mapped_column(String(25))
 
 
 class Order(Base):

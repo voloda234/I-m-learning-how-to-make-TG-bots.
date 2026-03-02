@@ -7,3 +7,8 @@ main = ReplyKeyboardMarkup(keyboard=[
 resize_keyboard=True,
 input_field_placeholder='Выберите пунк меню'
 )
+
+
+cancel = ReplyKeyboardMarkup(keyboard=[
+    [KeyboardButton(text='Отмена')]
+], resize_keyboard=True)
