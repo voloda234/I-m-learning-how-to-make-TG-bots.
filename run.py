@@ -18,8 +18,8 @@ async def main():
 
 async def on_startup(dispatcher):
     await asyns_main()
-
-
+    
+        
 if __name__ == '__main__':
     try:
         asyncio.run(main())
