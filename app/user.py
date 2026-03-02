@@ -7,7 +7,9 @@ from aiogram.fsm.context import FSMContext
 import app.keybords as kb
 from app.states import chat
 from app.generators import gpt_text
-from app.database.request import set_user
+from app.database.request import set_user, get_user
+
+from decimal import Decimal
 
 
 user = Router()
@@ -21,8 +23,12 @@ async def cmd_start(message: Message):
 
 @user.message(F.text == 'чат')
 async def chatting(message: Message, state: FSMContext):
-    await state.set_state(chat.text)
-    await message.answer('Введите ваш запрос')
+    user = await get_user(message.from_user.id)
+    if Decimal(user.balans) > 0:
+        await state.set_state(chat.text)
+        await message.answer('Введите ваш запрос')
+    else:
+        await message.answer('не достаточно средст, пополните баланс')
 
 
 @user.message(chat.text)
